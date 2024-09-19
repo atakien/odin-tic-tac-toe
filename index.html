@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Odin Tic-Tac-Toe</title>
+</head>
+<body>
+    <div class="container">
+        <div class="score">
+            <div class="score-player-1">
+                <span>Player-1 (X): </span>3
+            </div>
+            <div class="score-player-2">
+                <span>Player-2 (O): </span>2
+            </div>
+        </div>
+        <div class="board" id="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+        <button class="reset-btn">Reset</button>
+    </div>
+
+      <div class="winning-message" id="winningMessage">
+        <div class="winning-message-text" data-winning-message-text></div>
+        <div class="player-inputs">
+            <div class="players player-input-1">
+                <label for="player-1">Player-1</label>
+                <input type="text" id="player-1" name="player-1">
+            </div>
+            <div class="players player-input-2">
+                <label for="player-2">Player-2</label>
+                <input type="text" id="player-2" name="player-2">
+            </div>
+        </div>
+        <button id="restartButton">Restart</button>
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>

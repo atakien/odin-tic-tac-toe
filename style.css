@@ -1,0 +1,200 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size) * .9);
+  }
+  
+  body {
+    margin: 0;
+    background-color: rgb(200, 255, 207);
+  }
+
+  .container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .score{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(208, 171, 236);
+    padding: 2rem;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .board {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+    gap: 0.5rem;
+  }
+  
+  .cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .cell:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+  
+  .cell.x,
+  .cell.circle {
+    cursor: not-allowed;
+  }
+  
+  .cell.x::before,
+  .cell.x::after{
+    background-color: rgb(255, 151, 151);
+  }
+  
+  .cell.circle::before {
+    background-color: rgb(175, 222, 247);
+  }
+  
+  .board.x .cell:not(.x):not(.circle):hover::before,
+  .board.x .cell:not(.x):not(.circle):hover::after,
+  .board.circle .cell:not(.x):not(.circle):hover::before {
+    background-color: rgb(203, 235, 207);
+  }
+  
+  .cell.x::before,
+  .cell.x::after,
+  .board.x .cell:not(.x):not(.circle):hover::before,
+  .board.x .cell:not(.x):not(.circle):hover::after {
+    content: '';
+    position: absolute;
+    width: calc(var(--mark-size) * .15);
+    height: var(--mark-size);
+  }
+  
+  .cell.x::before,
+  .board.x .cell:not(.x):not(.circle):hover::before {
+    transform: rotate(45deg);
+  }
+  
+  .cell.x::after,
+  .board.x .cell:not(.x):not(.circle):hover::after {
+    transform: rotate(-45deg);
+  }
+  
+  .cell.circle::before,
+  .cell.circle::after,
+  .board.circle .cell:not(.x):not(.circle):hover::before,
+  .board.circle .cell:not(.x):not(.circle):hover::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .cell.circle::before,
+  .board.circle .cell:not(.x):not(.circle):hover::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+  }
+  
+  .cell.circle::after,
+  .board.circle .cell:not(.x):not(.circle):hover::after {
+    width: calc(var(--mark-size) * .7);
+    height: calc(var(--mark-size) * .7);
+    background-color: rgb(200, 255, 207);}
+
+.players{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+}
+input{
+    height: 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+label{
+    font-size: 1.5rem;
+}
+
+.player-input-1{
+    margin-bottom: 0.5rem;
+}
+
+.reset-btn{
+    padding: 0.4rem 2rem;
+    background-color: rgb(208, 171, 236);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+}
+  
+  .winning-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(208, 171, 236, 0.9);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    flex-direction: column;
+  }
+
+  .winning-message-text, .player-inputs{
+    margin-bottom: 2rem;
+  }
+  
+  .winning-message button {
+    font-size: 2rem;
+    background-color: rgb(179, 97, 242);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 0.3rem 2rem;
+    cursor: pointer;
+  }
+  
+  .winning-message button:hover {
+    background-color: rgb(200, 255, 207);
+    color: rgb(179, 97, 242);
+    border-color: rgb(179, 97, 242);
+  }
+  
+  .winning-message.show {
+    display: flex;
+  }
+  
+  
