@@ -146,6 +146,11 @@ label{
     margin-bottom: 0.5rem;
 }
 
+::placeholder {
+    color: gray;
+    opacity: 0.5; 
+  }
+
 .reset-btn{
     padding: 0.4rem 2rem;
     background-color: rgb(208, 171, 236);
