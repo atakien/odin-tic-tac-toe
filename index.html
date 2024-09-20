@@ -9,32 +9,21 @@
 <body>
     <div class="container">
         <div class="score">
-            <div class="score-player-1">
-                <span>Player-1 (X): </span><span id="scoreX">0</span>
-            </div>
-            <div class="score-player-2">
-                <span>Player-2 (O): </span><span id="scoreO">0</span>
-            </div>
-        </div>
-        <div id="message"></div>
-        <div class="board" id="gameboard"></div>
-        <button id="start-button" class="reset-btn">Start Game</button>
-        <button id="restart-button" class="reset-btn">Reset</button>
-        
-        <div class="player-inputs">
             <div class="players player-input-1">
-                <label for="player1">Player-1</label>
+                <label for="player1">X</label>
                 <input type="text" id="player1" name="player-1" placeholder="Username-1">
             </div>
             <div class="players player-input-2">
-                <label for="player2">Player-2</label>
+                <label for="player2">O</label>
                 <input type="text" id="player2" name="player-2" placeholder="Username-2">
             </div>
         </div>
-    </div>
-
-    <div class="winning-message" id="winningMessage">
-        <div class="winning-message-text" data-winning-message-text></div>
+        <div class="message" id="message"></div>
+        <div class="board" id="gameboard"></div>
+        <div class="btns">
+            <button id="start-button" class="start-btn">Start Game</button>
+            <button id="restart-button" class="restart-btn">Restart</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
